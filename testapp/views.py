@@ -8,4 +8,12 @@ class HelloWorld(View):
 
 class TemplateCBV(TemplateView):
     template_name='testapp/results.html'
-    
+
+class TemplateCBV2(TemplateView):
+    template_name='testapp/results2.html'
+    def get_context_data(self, **kwargs):
+        context= super().get_context_data(**kwargs)
+        context['Name']="Sunny"
+        context['Marks']=98
+        context['Subject']='Python'
+        return context
